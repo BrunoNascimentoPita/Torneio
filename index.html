@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneios Onurb L</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+
+        #menu ul li {
+            list-style: none;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0;
+            margin: 0%;
+            padding: 20px 30px;
+            font-family: nome;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: red;
+        }
+
+        a {
+
+            text-decoration: none;
+            color: rgb(163, 163, 45);
+            font-size: 20px;
+        }
+
+        #menu {
+            font-family: nome;
+            position: relative;
+            font-size: clamp(1rem, 1vw, 2rem);
+            background-color: rgb(10, 26, 18);
+            text-transform: uppercase;
+
+        }
+
+
+        .ranking {
+
+            padding: 7px 40px;
+            color: black;
+            border-radius: 0%;
+            display: none;
+            font-family: nome;
+            background-color: rgb(255, 255, 255);
+            width: 50%;
+
+        }
+
+        #titleranking {
+            color: rgb(0, 0, 0);
+
+        }
+
+        #inscricao {
+            display: none;
+        }
+
+        .noticias {
+            display: none;
+        }
+
+        #regras {
+            display: none;
+        }
+
+        #premiacoes {
+            display: none;
+        }
+
+        #duvidas {
+            display: none;
+        }
+
+        #contato {
+            display: none;
+        }
+
+        h2 {
+            color: black;
+        }
+
+        @font-face {
+            font-family: nome;
+            src: url(/font/beaufortforlol-bold.otf);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!--Start Nav-->
+    <nav id="menu">
+        <ul>
+            <li><a href="#">INÍCIO</a></li>
+            <li><a onclick="verRanking()" href="#">Ranking</a></li>
+            <li><a onclick="verInscricao()" href="#">Inscreva-se</a></li>
+            <li><a onclick="verNoticias()" href="#">Notícias</a></li>
+            <li><a onclick="verRegras()" href="#">Regras</a></li>
+            <li><a onclick="verPremiacoes()" href="#">Premiações</a></li>
+            <li><a onclick="verDuvidas()" href="#">Dúvidas</a></li>
+            <li><a onclick="verContato()" href="#">Contato</a></li>
+        </ul>
+    </nav>
+    <!--End Nav-->
+
+    <!--Start Ranking-->
+    <center>
+        <ul id=ranking class="list-group ranking">
+            <h2 id=titleranking>RANKING MENSAL</h2>
+            <li class="list-group-item">TEAM #1</li>
+            <li class="list-group-item">TEAM #2</li>
+            <li class="list-group-item">TEAM #3</li>
+            <li class="list-group-item">TEAM #4</li>
+            <li class="list-group-item">...</li>
+        </ul>
+    </center>
+    <!--End Ranking-->
+
+    <!--Form-->
+    <section id=inscricao>
+        <center>
+            <h2>Inscreva-se</h2>
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfOfMMtyPjp5JREidzq2qW-0KT425o2EZGc6smB0geG9s_1fw/viewform?embedded=true"
+                width="940" height="1803" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+            </form>
+        </center>
+    </section>
+    <!--End Form-->
+
+    <!--News Tournaments-->
+    <div id=noticias class="list-group noticias">
+        <a href="#" class="list-group-item list-group-item-action active">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Torneio #1</h5>
+                <small>30/11</small>
+            </div>
+            <p class="mb-1">E foi dada a largada do nosso maior torneio.</p>
+            <small>Participe em inscrições, veja as regras.</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Torneio #2</h5>
+                <small class="text-muted">23/10</small>
+            </div>
+            <p class="mb-1">Nosso segundo torneio.</p>
+            <small class="text-muted">Participe em inscrições, veja as regras.</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Torneio #3</h5>
+                <small class="text-muted">3 days ago</small>
+            </div>
+            <p class="mb-1">Já já começaremos a ter clássicos galera!</p>
+            <small class="text-muted">Participe em inscrições, veja as regras.</small>
+        </a>
+    </div>
+    <!--End News Tournaments-->
+    <center>
+
+        <!--Rules-->
+        <h2>
+            <p id=regras>Regras do torneio</p>
+            <!--End Rules-->
+
+            <!--Awards-->
+            <p id=premiacoes>Premiações</p>
+            <!--End Awards-->
+
+            <!--Questions-->
+            <p id="duvidas">Dúvidas</p>
+            <!--End Questions-->
+        </h2>
+        <!--Contact-->
+        <h3>
+            <p id="contato">Contato <br><br> E-mail: bruno__nascimento@outlook.com <br> Cel:(71)9 9287-3686
+                <br><br>Organizador: Bruno Nascimento da Rocha Pita <br><iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSf5PSKZV6CCT2p-qvW1T59sfoSclVqFmHgSU20qbzn0YvCFfw/viewform?embedded=true"
+                    width="640" height="705" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe></p>
+        </h3>
+        <!--End Contact-->
+
+    </center>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+    <script>
+        var inscricao = document.getElementById('inscricao');
+        var ranking = document.getElementById('ranking');
+        var noticias = document.getElementById('noticias');
+        var regras = document.getElementById('regras');
+        var premiacoes = document.getElementById('premiacoes');
+        var duvidas = document.getElementById('duvidas');
+        var contato = document.getElementById('contato');
+        function verRanking() {
+
+            if (ranking.style.display == 'block') {
+
+            } else {
+                ranking.style.display = 'block';
+                noticias.style.display = 'none';
+                inscricao.style.display = 'none';
+                regras.style.display = 'none';
+                premiacoes.style.display = 'none';
+                duvidas.style.display = 'none';
+                contato.style.display = 'none';
+            }
+        }
+
+        function verInscricao() {
+
+            if (inscricao.style.display == 'block') {
+
+
+            } else {
+                inscricao.style.display = 'block';
+                ranking.style.display = 'none';
+                noticias.style.display = 'none';
+                regras.style.display = 'none';
+                premiacoes.style.display = 'none';
+                duvidas.style.display = 'none';
+                contato.style.display = 'none';
+
+            }
+        }
+
+        function verNoticias() {
+
+            if (noticias.style.display == 'block') {
+
+
+            } else {
+                noticias.style.display = 'block';
+                inscricao.style.display = 'none';
+                ranking.style.display = 'none';
+                regras.style.display = 'none';
+                premiacoes.style.display = 'none';
+                duvidas.style.display = 'none';
+                contato.style.display = 'none';
+            }
+        }
+
+        function verRegras() {
+
+            if (regras.style.display == 'block') {
+
+
+            } else {
+                regras.style.display = 'block';
+                inscricao.style.display = 'none';
+                ranking.style.display = 'none';
+                noticias.style.display = 'none';
+                premiacoes.style.display = 'none';
+                duvidas.style.display = 'none';
+                contato.style.display = 'none';
+            }
+        }
+        function verPremiacoes() {
+
+            if (premiacoes.style.display == 'block') {
+
+
+            } else {
+                premiacoes.style.display = 'block';
+                inscricao.style.display = 'none';
+                ranking.style.display = 'none';
+                regras.style.display = 'none';
+                noticias.style.display = 'none';
+                duvidas.style.display = 'none';
+                contato.style.display = 'none';
+            }
+        }
+        function verDuvidas() {
+
+            if (duvidas.style.display == 'block') {
+
+
+            } else {
+                duvidas.style.display = 'block';
+                inscricao.style.display = 'none';
+                ranking.style.display = 'none';
+                regras.style.display = 'none';
+                noticias.style.display = 'none';
+                premiacoes.style.display = 'none';
+                contato.style.display = 'none';
+            }
+        }
+
+
+        function verContato() {
+
+            if (contato.style.display == 'block') {
+
+
+            } else {
+                contato.style.display = 'block';
+                inscricao.style.display = 'none';
+                ranking.style.display = 'none';
+                regras.style.display = 'none';
+                noticias.style.display = 'none';
+                premiacoes.style.display = 'none';
+                duvidas.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
