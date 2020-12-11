@@ -113,19 +113,99 @@
             height: 50%;
             display: inline-block;
         }
-
+#menumobile{display:none;}
         @media all and (min-width: 0px) and (max-width: 924px) {
+            #menumobile{list-style: none; position: absolute; display:none;font-family: nome;font-size:20px;left:60%;}
             .redes {
              display:block;
             }
 #menu{display: none;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html, body{
+  height: 100%;
+}
+
+.container{
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#checkbox-menu{
+  position: absolute;
+  opacity: 0;
+  left:90%;
+}
+
+label{
+  cursor: pointer;
+  position: relative;
+  display: block;
+  height: 22px;
+  width: 30px;
+  left:40%;
+}
+
+label span{
+  position: absolute;
+  display: block;
+  height: 5px;
+  width: 100%;
+  border-radius: 30px;
+  background: #f16234;
+  transition: 0.25s ease-in-out;
+}
+
+label span:nth-child(1){
+  top: 0;
+}
+
+label span:nth-child(2){
+  top: 8px;
+}
+
+label span:nth-child(3){
+  top: 16px;
+}
+
+#checkbox-menu:checked + label span:nth-child(1){
+  transform: rotate(-45deg);
+  top: 8px;
+}
+
+#checkbox-menu:checked + label span:nth-child(2){
+  opacity: 0;
+}
+
+#checkbox-menu:checked + label span:nth-child(3){
+  transform: rotate(45deg);
+  top:8px;
+}
         }
     </style>
 </head>
 
 <body>
+<!--Star Nav Mobile-->
+<div  class="container">
+    <input  type="checkbox" id="checkbox-menu">
 
-
+    <label onclick="verMenuMobile()"; id=abrimenu for="checkbox-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+ 
+  </div>
+  <ul id=menumobile><li>INÍCIO</li><li>RANKING</li><li>INSCREVA-SE</li><li>TORNEIOS</li></ul>
+  <!--End Nav Mobile-->
     <!--Start Nav-->
     <nav id="menu">
         <ul>
@@ -436,6 +516,14 @@ var inicio = document.getElementById('inicio');
         }
 
 
+function verMenuMobile(){
+    var menumobile=document.getElementById('menumobile');
+if(menumobile.style.display=='block'){
+    menumobile.style.display='none';
+}else{
+    menumobile.style.display='block';
+}
+}
     </script>
 </body>
 
