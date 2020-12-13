@@ -105,6 +105,7 @@
             src: url(/font/beaufortforlol-bold.otf);
         }
 
+
         .redes {
             position: relative;
             width: 50px;
@@ -113,99 +114,151 @@
             height: 50%;
             display: inline-block;
         }
-#menumobile{display:none;}
+
+        .container,
+        #checkbox-menu {
+            display: none;
+        }
+
+        #menumobile {
+            display: none;
+
+        }
+
         @media all and (min-width: 0px) and (max-width: 924px) {
-            #menumobile{list-style: none; position: absolute; display:none;font-family: nome;font-size:20px;left:60%;}
-            .redes {
-             display:block;
+            #menumobile {
+                list-style: none;
+                position: relative;
+                display: none;
+                font-family: nome;
+                font-size: 20px;
+                left: 60%;
+
             }
-#menu{display: none;}
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
 
-html, body{
-  height: 100%;
-}
+            a {
 
-.container{
-  height: 100px;
+                text-decoration: none;
+                color: rgb(0, 0, 0);
+                font-size: 20px;
+            }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+            .ranking {
 
-#checkbox-menu{
-  position: absolute;
-  opacity: 0;
-  left:90%;
-}
+                padding: 7px 40px;
+                color: black;
+                border-radius: 0%;
+                display: none;
+                font-family: nome;
+                background-color: rgb(255, 255, 255);
+                width: 70%;
 
-label{
-  cursor: pointer;
-  position: relative;
-  display: block;
-  height: 22px;
-  width: 30px;
-  left:40%;
-}
+            }
 
-label span{
-  position: absolute;
-  display: block;
-  height: 5px;
-  width: 100%;
-  border-radius: 30px;
-  background: #f16234;
-  transition: 0.25s ease-in-out;
-}
+            .redes {
+                display: block;
+            }
 
-label span:nth-child(1){
-  top: 0;
-}
+            #menu {
+                display: none;
+            }
 
-label span:nth-child(2){
-  top: 8px;
-}
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-label span:nth-child(3){
-  top: 16px;
-}
+            html,
+            body {
+                height: 100%;
+            }
 
-#checkbox-menu:checked + label span:nth-child(1){
-  transform: rotate(-45deg);
-  top: 8px;
-}
+            .container {
+                height: 100px;
 
-#checkbox-menu:checked + label span:nth-child(2){
-  opacity: 0;
-}
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-#checkbox-menu:checked + label span:nth-child(3){
-  transform: rotate(45deg);
-  top:8px;
-}
+            #checkbox-menu {
+                position: absolute;
+                opacity: 0;
+                left: 90%;
+            }
+
+            label {
+                cursor: pointer;
+                position: relative;
+                display: block;
+                height: 22px;
+                width: 30px;
+                left: 40%;
+            }
+
+            label span {
+                position: absolute;
+                display: block;
+                height: 5px;
+                width: 100%;
+                border-radius: 30px;
+                background: #f16234;
+                transition: 0.25s ease-in-out;
+            }
+
+            label span:nth-child(1) {
+                top: 0;
+            }
+
+            label span:nth-child(2) {
+                top: 8px;
+            }
+
+            label span:nth-child(3) {
+                top: 16px;
+            }
+
+            #checkbox-menu:checked+label span:nth-child(1) {
+                transform: rotate(-45deg);
+                top: 8px;
+            }
+
+            #checkbox-menu:checked+label span:nth-child(2) {
+                width: 13px;
+            }
+
+            #checkbox-menu:checked+label span:nth-child(3) {
+                transform: rotate(0 deg);
+                top: 8px;
+            }
         }
     </style>
 </head>
 
 <body>
-<!--Star Nav Mobile-->
-<div  class="container">
-    <input  type="checkbox" id="checkbox-menu">
+    <!--Star Nav Mobile-->
+    <div class="container">
+        <input type="checkbox" id="checkbox-menu">
 
-    <label onclick="verMenuMobile()"; id=abrimenu for="checkbox-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
- 
-  </div>
-  <ul id=menumobile><li>INÍCIO</li><li>RANKING</li><li>INSCREVA-SE</li><li>TORNEIOS</li></ul>
-  <!--End Nav Mobile-->
+        <label onclick="verMenuMobile()" ; id=abrimenu for="checkbox-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+    </div>
+    <ul id=menumobile>
+        <li><a onclick="verInicio()" href="#">INÍCIO</a></li>
+        <li><a onclick="verRanking()" href="#">Ranking</a></li>
+        <li><a onclick="verInscricao()" href="#">Inscreva-se</a></li>
+        <li><a onclick="verNoticias()" href="#">Torneios</a></li>
+        <li><a onclick="verRegras()" href="#regras">Regras</a></li>
+        <li><a onclick="verPremiacoes()" href="#">Premiações</a></li>
+        <li><a onclick="verDuvidas()" href="#">Dúvidas</a></li>
+        <li><a onclick="verContato()" href="#">Contato</a></li>
+    </ul>
+    <!--End Nav Mobile-->
     <!--Start Nav-->
     <nav id="menu">
         <ul>
@@ -247,72 +300,79 @@ label span:nth-child(3){
     <!--End Ranking-->
 
     <!--Form-->
-    <section id=inscricao>
+    <div id="objects">
+        <section id=inscricao>
+            <center>
+                <h2>Inscreva-se</h2>
+                <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSfOfMMtyPjp5JREidzq2qW-0KT425o2EZGc6smB0geG9s_1fw/viewform?embedded=true"
+                    width="940" height="1803" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+                </form>
+            </center>
+        </section>
+        <!--End Form-->
+
+        <!--News Tournaments-->
+        <div id=noticias class="list-group noticias">
+            <a href="#regras" class="list-group-item list-group-item-action ">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">EM BREVE</h5>
+                    <small>1 days ago</small>
+                </div>
+                <p class="mb-1">Ainda não temos um torneio finalizado.</p>
+                <small>Não há tabela.</small>
+            </a>
+
+        </div>
+        <!--End News Tournaments-->
         <center>
-            <h2>Inscreva-se</h2>
-            <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSfOfMMtyPjp5JREidzq2qW-0KT425o2EZGc6smB0geG9s_1fw/viewform?embedded=true"
-                width="940" height="1803" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
-            </form>
+
+            <!--Rules-->
+            <h2>
+                <p id=regras>Regras do torneio</p>
+                <!--End Rules-->
+
+                <!--Awards-->
+                <p id=premiacoes>Premiações</p>
+                <!--End Awards-->
+            </h2>
         </center>
-    </section>
-    <!--End Form-->
+        <!--Questions-->
+        <h4>
+            <p id="duvidas">Dúvidas<br> <br>Qual a premiação? -Premiação se forma na depência da quantidade de times. Ou
+                seja 10 times inscritos totalizando o valor de 300 reais de inscrição(sendo 30 para cada time inscrito),
+                sendo R$250 de premiação e R$50 para o organizador (Investirei no domínio do site(o mesmo 40 reais
+                anuais),
+                e na continuação desses torneios). <br><br>
+                Quanto é a inscrição mínima? -Por enquanto 30 reais por time, e caso não atinja no mínimo 10 times
+                confirmados, o torneio é cancelado e o pagamento de inscrição devolvido. <br><br>
+                Onde devo comunicar vitórias, derrotas e afins.? -É possível nos comunicarmos por 3 formas, discord,
+                whatsapp e e-mail. De prioridade peço que toda situação seja comunicada ou pelo discord, ou por
+                whatsapp,
+                pois o tempo de resposta é garantido ser mais rápido nesses canais.
+            </p>
+        </h4>
 
-    <!--News Tournaments-->
-    <div id=noticias class="list-group noticias">
-        <a href="#regras" class="list-group-item list-group-item-action ">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">EM BREVE</h5>
-                <small>1 days ago</small>
-            </div>
-            <p class="mb-1">Ainda não temos um torneio finalizado.</p>
-            <small>Não há tabela.</small>
-        </a>
+        <!--End Questions-->
 
+        <!--Contact-->
+        <center>
+            <h3>
+                <p id="contato">Contato <br><br> E-mail: bruno__nascimento@outlook.com <br> Cel:(71)9 9287-3686
+                    <br><br>Organizador: Bruno Nascimento da Rocha Pita <br><iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSf5PSKZV6CCT2p-qvW1T59sfoSclVqFmHgSU20qbzn0YvCFfw/viewform?embedded=true"
+                        width="640" height="705" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+                </p>
+            </h3>
+            <!--End Contact-->
     </div>
-    <!--End News Tournaments-->
-    <center>
-
-        <!--Rules-->
-        <h2>
-            <p id=regras>Regras do torneio</p>
-            <!--End Rules-->
-
-            <!--Awards-->
-            <p id=premiacoes>Premiações</p>
-            <!--End Awards-->
-        </h2>
-    </center>
-    <!--Questions-->
-    <h4>
-        <p id="duvidas">Dúvidas<br> <br>Qual a premiação? -Premiação se forma na depência da quantidade de times. Ou
-            seja 10 times inscritos totalizando o valor de 300 reais de inscrição(sendo 30 para cada time inscrito),
-            sendo R$250 de premiação e R$50 para o organizador (Investirei no domínio do site(o mesmo 40 reais anuais),
-            e na continuação desses torneios). <br><br>
-            Quanto é a inscrição mínima? -Por enquanto 30 reais por time, e caso não atinja no mínimo 10 times
-            confirmados, o torneio é cancelado e o pagamento de inscrição devolvido. <br><br>
-            Onde devo comunicar vitórias, derrotas e afins.? -É possível nos comunicarmos por 3 formas, discord,
-            whatsapp e e-mail. De prioridade peço que toda situação seja comunicada ou pelo discord, ou por whatsapp,
-            pois o tempo de resposta é garantido ser mais rápido nesses canais.
-        </p>
-    </h4>
-
-    <!--End Questions-->
-
-    <!--Contact-->
-    <center>
-        <h3>
-            <p id="contato">Contato <br><br> E-mail: bruno__nascimento@outlook.com <br> Cel:(71)9 9287-3686
-                <br><br>Organizador: Bruno Nascimento da Rocha Pita <br><iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSf5PSKZV6CCT2p-qvW1T59sfoSclVqFmHgSU20qbzn0YvCFfw/viewform?embedded=true"
-                    width="640" height="705" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe></p>
-        </h3>
-        <!--End Contact-->
-
     </center>
 
     <script>
-
+        var menumobile = document.getElementById('menumobile');
+        function fechamenuMobile() {
+            menumobile.style.display = 'none';
+        }
         function verRanking() {
             var inscricao = document.getElementById('inscricao');
             var ranking = document.getElementById('ranking');
@@ -333,7 +393,7 @@ label span:nth-child(3){
                 premiacoes.style.display = 'none';
                 duvidas.style.display = 'none';
                 contato.style.display = 'none';
-
+                fechamenuMobile();
                 inicio.style.display = 'none';
             }
         }
@@ -359,7 +419,7 @@ label span:nth-child(3){
                 premiacoes.style.display = 'none';
                 duvidas.style.display = 'none';
                 contato.style.display = 'none';
-
+                fechamenuMobile();
                 inicio.style.display = 'none';
             }
         }
@@ -385,7 +445,7 @@ label span:nth-child(3){
                 premiacoes.style.display = 'none';
                 duvidas.style.display = 'none';
                 contato.style.display = 'none';
-
+                fechamenuMobile();
                 inicio.style.display = 'none';
             }
         }
@@ -398,7 +458,7 @@ label span:nth-child(3){
             var premiacoes = document.getElementById('premiacoes');
             var duvidas = document.getElementById('duvidas');
             var contato = document.getElementById('contato');
-var inicio = document.getElementById('inicio');
+            var inicio = document.getElementById('inicio');
             if (regras.style.display == 'block') {
 
 
@@ -410,8 +470,7 @@ var inicio = document.getElementById('inicio');
                 premiacoes.style.display = 'none';
                 duvidas.style.display = 'none';
                 contato.style.display = 'none';
-
-
+                fechamenuMobile();
                 inicio.style.display = 'none';
             }
         }
@@ -436,6 +495,7 @@ var inicio = document.getElementById('inicio');
                 duvidas.style.display = 'none';
                 contato.style.display = 'none';
                 inicio.style.display = 'none';
+                fechamenuMobile();
             }
         }
         function verDuvidas() {
@@ -458,8 +518,7 @@ var inicio = document.getElementById('inicio');
                 noticias.style.display = 'none';
                 premiacoes.style.display = 'none';
                 contato.style.display = 'none';
-
-
+                fechamenuMobile();
                 inicio.style.display = 'none';
             }
         }
@@ -486,7 +545,7 @@ var inicio = document.getElementById('inicio');
                 noticias.style.display = 'none';
                 premiacoes.style.display = 'none';
                 duvidas.style.display = 'none';
-
+                fechamenuMobile();
                 inicio.style.display = 'none';
             }
         }
@@ -512,18 +571,19 @@ var inicio = document.getElementById('inicio');
                 noticias.style.display = 'none';
                 premiacoes.style.display = 'none';
                 duvidas.style.display = 'none';
+                fechamenuMobile();
             }
         }
 
 
-function verMenuMobile(){
-    var menumobile=document.getElementById('menumobile');
-if(menumobile.style.display=='block'){
-    menumobile.style.display='none';
-}else{
-    menumobile.style.display='block';
-}
-}
+        function verMenuMobile() {
+            var menumobile = document.getElementById('menumobile');
+            if (menumobile.style.display == 'block') {
+                menumobile.style.display = 'none';
+            } else {
+                menumobile.style.display = 'block';
+            }
+        }
     </script>
 </body>
 
